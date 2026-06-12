@@ -512,67 +512,100 @@ function CTASection() {
 
 function Footer() {
   return (
-    <footer className="w-full py-10 md:py-16">
+    <footer className="w-full pt-12 pb-8 border-t border-gray-200">
       <div className="max-w-[1440px] mx-auto px-6 md:px-[61px]">
-        <div className="flex flex-col md:flex-row justify-between items-start mb-10 gap-8">
-          <Logo />
 
-          <div className="flex flex-wrap gap-6 items-center">
-            <ProgrammesDropdown />
-            <AdmissionsDropdown />
-            <AboutDropdown />
-            <NewsEventsDropdown />
-            <span
-              className="font-['Roboto:SemiBold',sans-serif] font-semibold text-[14px] text-black cursor-pointer hover:opacity-70 transition-opacity"
-              style={{ fontVariationSettings: '"wdth" 100' }}
-            >
-              Contact
-            </span>
+        {/* Main footer grid */}
+        <div className="flex flex-col md:flex-row gap-12 md:gap-8 justify-between mb-12">
+
+          {/* Left column: logos + action buttons */}
+          <div className="flex flex-col gap-6 shrink-0">
+            <Logo />
+            <img
+              src="https://aaaschool.ac.za/wp-content/uploads/elementor/thumbs/Member_Badge2C_May_2026_-_Apr_20272C_horizontal-rlp2zbc6nnhek3ekiwwbrhqm5itpo45ydmjfolqefy.png"
+              alt="IAB SA Member"
+              className="w-[120px] object-contain"
+            />
+            <div className="flex flex-col gap-3 mt-2">
+              <button className="group flex items-center gap-2 px-4 py-2 rounded-[50px] border border-[#241010] font-['Lato:Medium',sans-serif] text-[15px] text-black not-italic hover:bg-[#241010] hover:text-white transition-colors duration-300 w-fit">
+                <svg className="size-[24px] shrink-0" fill="none" viewBox="0 0 24 24">
+                  <path d={svgPaths.p24a44960} className="fill-black group-hover:fill-white transition-colors duration-300" />
+                  <path d={svgPaths.p37470580} className="fill-black group-hover:fill-white transition-colors duration-300" />
+                  <path d={svgPaths.p27c92d80} className="fill-black group-hover:fill-white transition-colors duration-300" />
+                </svg>
+                Enquire
+              </button>
+              <button className="group flex items-center gap-2 px-4 py-2 rounded-[50px] border border-[#121212] font-['Lato:Medium',sans-serif] text-[15px] text-[#121212] not-italic hover:bg-[#241010] hover:text-white transition-colors duration-300 w-fit">
+                <svg className="h-[24px] w-[17px] shrink-0" fill="none" viewBox="0 0 16.7761 23.8594">
+                  <path d={svgPaths.p1d8b600} className="fill-[#241010] group-hover:fill-white transition-colors duration-300" />
+                  <path d={svgPaths.p3b46e800} className="fill-[#241010] group-hover:fill-white transition-colors duration-300" />
+                </svg>
+                Visit
+              </button>
+              <button className="group flex items-center gap-2 px-4 py-2 rounded-[50px] border border-black font-['Lato:Medium',sans-serif] text-[15px] text-black not-italic hover:bg-[#241010] hover:text-white transition-colors duration-300 w-fit">
+                <svg className="size-[18px] shrink-0" fill="none" viewBox="0 0 18 18">
+                  <path d={svgPaths.p23fbca00} className="fill-[#241010] group-hover:fill-white transition-colors duration-300" />
+                </svg>
+                Apply
+              </button>
+            </div>
           </div>
 
-          <div className="flex flex-col gap-3">
-            <button className="group flex items-center gap-2 px-4 py-2 rounded-[50px] border border-[#241010] font-['Lato:Medium',sans-serif] text-[15px] text-black not-italic hover:bg-[#241010] hover:text-white transition-colors duration-300 w-fit">
-              <svg className="size-[24px] shrink-0" fill="none" viewBox="0 0 24 24">
-                <path d={svgPaths.p24a44960} className="fill-black group-hover:fill-white transition-colors duration-300" />
-                <path d={svgPaths.p37470580} className="fill-black group-hover:fill-white transition-colors duration-300" />
-                <path d={svgPaths.p27c92d80} className="fill-black group-hover:fill-white transition-colors duration-300" />
-              </svg>
-              Enquire
-            </button>
-            <button className="group flex items-center gap-2 px-4 py-2 rounded-[50px] border border-[#121212] font-['Lato:Medium',sans-serif] text-[15px] text-[#121212] not-italic hover:bg-[#241010] hover:text-white transition-colors duration-300 w-fit">
-              <svg className="h-[24px] w-[17px] shrink-0" fill="none" viewBox="0 0 16.7761 23.8594">
-                <path d={svgPaths.p1d8b600} className="fill-[#241010] group-hover:fill-white transition-colors duration-300" />
-                <path d={svgPaths.p3b46e800} className="fill-[#241010] group-hover:fill-white transition-colors duration-300" />
-              </svg>
-              Visit
-            </button>
-            <button className="group flex items-center gap-2 px-4 py-2 rounded-[50px] border border-black font-['Lato:Medium',sans-serif] text-[15px] text-black not-italic hover:bg-[#241010] hover:text-white transition-colors duration-300 w-fit">
-              <svg className="size-[18px] shrink-0" fill="none" viewBox="0 0 18 18">
-                <path d={svgPaths.p23fbca00} className="fill-[#241010] group-hover:fill-white transition-colors duration-300" />
-              </svg>
-              Apply
-            </button>
+          {/* Nav columns */}
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-8 text-[13px]">
+
+            {/* Programmes */}
+            <div className="flex flex-col gap-2">
+              <p className="font-['Roboto:SemiBold',sans-serif] font-semibold text-black mb-1" style={{ fontVariationSettings: '"wdth" 100' }}>Programmes</p>
+              <p className="font-['Roboto:Regular',sans-serif] text-gray-500 text-[11px] mt-1" style={{ fontVariationSettings: '"wdth" 100' }}>By Level</p>
+              {["Short Courses", "Higher Certificates", "Diplomas", "Undergraduate Degrees", "Postgraduate Degrees"].map((item) => (
+                <a key={item} href="#" className="font-['Roboto:Regular',sans-serif] text-black hover:opacity-60 transition-opacity" style={{ fontVariationSettings: '"wdth" 100' }}>{item}</a>
+              ))}
+              <p className="font-['Roboto:Regular',sans-serif] text-gray-500 text-[11px] mt-3" style={{ fontVariationSettings: '"wdth" 100' }}>By Ways to Study</p>
+              {["Online", "On Campus"].map((item) => (
+                <a key={item} href="#" className="font-['Roboto:Regular',sans-serif] text-black hover:opacity-60 transition-opacity" style={{ fontVariationSettings: '"wdth" 100' }}>{item}</a>
+              ))}
+            </div>
+
+            {/* Admissions */}
+            <div className="flex flex-col gap-2">
+              <p className="font-['Roboto:SemiBold',sans-serif] font-semibold text-black mb-1" style={{ fontVariationSettings: '"wdth" 100' }}>Admissions</p>
+              {["Fees & prospectus", "Payment Methods"].map((item) => (
+                <a key={item} href="#" className="font-['Roboto:Regular',sans-serif] text-black hover:opacity-60 transition-opacity" style={{ fontVariationSettings: '"wdth" 100' }}>{item}</a>
+              ))}
+            </div>
+
+            {/* About aaa */}
+            <div className="flex flex-col gap-2">
+              <p className="font-['Roboto:SemiBold',sans-serif] font-semibold text-black mb-1" style={{ fontVariationSettings: '"wdth" 100' }}>About aaa</p>
+              {["Why aaa", "aaa Experience", "Our Campuses", "Alumni Stories"].map((item) => (
+                <a key={item} href="#" className="font-['Roboto:Regular',sans-serif] text-black hover:opacity-60 transition-opacity" style={{ fontVariationSettings: '"wdth" 100' }}>{item}</a>
+              ))}
+            </div>
+
+            {/* News & Events */}
+            <div className="flex flex-col gap-2">
+              <p className="font-['Roboto:SemiBold',sans-serif] font-semibold text-black mb-1" style={{ fontVariationSettings: '"wdth" 100' }}>News & Events</p>
+              {["News", "Events"].map((item) => (
+                <a key={item} href="#" className="font-['Roboto:Regular',sans-serif] text-black hover:opacity-60 transition-opacity" style={{ fontVariationSettings: '"wdth" 100' }}>{item}</a>
+              ))}
+            </div>
+
+            {/* Contact */}
+            <div className="flex flex-col gap-2">
+              <p className="font-['Roboto:SemiBold',sans-serif] font-semibold text-black mb-1" style={{ fontVariationSettings: '"wdth" 100' }}>Contact</p>
+            </div>
+
           </div>
         </div>
 
+        {/* Bottom bar */}
         <div className="border-t border-black pt-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-          <p
-            className="font-['Roboto:Regular',sans-serif] font-normal text-[14px] text-black"
-            style={{ fontVariationSettings: '"wdth" 100' }}
-          >
+          <p className="font-['Roboto:Regular',sans-serif] font-normal text-[14px] text-black" style={{ fontVariationSettings: '"wdth" 100' }}>
             © 2026 aaa. All rights reserved.
           </p>
-          <div className="flex flex-wrap gap-6">
-            <a href="#" className="font-['Roboto:Regular',sans-serif] text-[14px] text-black underline decoration-solid" style={{ fontVariationSettings: '"wdth" 100' }}>
-              Privacy Policy
-            </a>
-            <a href="#" className="font-['Roboto:Regular',sans-serif] text-[14px] text-black underline decoration-solid" style={{ fontVariationSettings: '"wdth" 100' }}>
-              Terms &amp; Conditions
-            </a>
-            <a href="#" className="font-['Roboto:Regular',sans-serif] text-[14px] text-black underline decoration-solid" style={{ fontVariationSettings: '"wdth" 100' }}>
-              PAIA Manual
-            </a>
-          </div>
+
+          {/* Social icons */}
           <div className="flex gap-3 items-center">
             <div className="overflow-clip relative shrink-0 size-[24px] cursor-pointer hover:opacity-70">
               <div className="absolute inset-[12.5%_29.17%]">
@@ -603,7 +636,15 @@ function Footer() {
               </div>
             </div>
           </div>
+
+          {/* Legal links */}
+          <div className="flex flex-wrap gap-6">
+            <a href="#" className="font-['Roboto:Regular',sans-serif] text-[14px] text-black underline decoration-solid hover:opacity-70 transition-opacity" style={{ fontVariationSettings: '"wdth" 100' }}>Privacy Policy</a>
+            <a href="#" className="font-['Roboto:Regular',sans-serif] text-[14px] text-black underline decoration-solid hover:opacity-70 transition-opacity" style={{ fontVariationSettings: '"wdth" 100' }}>Terms &amp; Conditions</a>
+            <a href="#" className="font-['Roboto:Regular',sans-serif] text-[14px] text-black underline decoration-solid hover:opacity-70 transition-opacity" style={{ fontVariationSettings: '"wdth" 100' }}>PAIA Manual</a>
+          </div>
         </div>
+
       </div>
     </footer>
   );
